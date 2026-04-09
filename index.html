@@ -364,7 +364,7 @@
       <div class="card main">
         <div class="topline">
           <div>
-            <div class="badge">Black-box prediction → local explanation</div>
+            <div class="badge">Black-box Prediction Explanation</div>
             <div class="story" id="story"></div>
           </div>
           <div class="pricebox">
@@ -380,8 +380,6 @@
           <span><span class="dot" style="background:var(--down)"></span>Pushes price down</span>
         </div>
         <div class="take" id="takeaway"></div>
-        <div class="footer">Use this in your lecture as a self-contained live demo. It mimics a SHAP waterfall: start
-          from a base value, then show which features push the prediction higher or lower.</div>
       </div>
     </div>
   </div>
@@ -442,7 +440,7 @@
       const topNeg = neg[0] ? neg[0][0].toLowerCase() : 'none';
       document.getElementById('predPrice').textContent = euro(pred);
       document.getElementById('story').textContent = `The model predicts ${euro(pred)} for this house. The explanation shows that ${topPos} pushes the price up the most, while ${topNeg} pushes it down.`;
-      document.getElementById('takeaway').innerHTML = `<strong>Takeaway:</strong> Accuracy tells us the predicted price. This SHAP-style view checks whether the model reached that price for sensible reasons.`;
+      document.getElementById('takeaway').innerHTML = `<strong>Takeaway:</strong> Accuracy only tells us the model got the right answer. XAI acts as our Quality Control to verify that it got the right answer for the right reasons (aligning with real estate economics).`;
       document.getElementById('areaOut').textContent = `Current area: ${state.area} m²`;
     }
     function sync() {
