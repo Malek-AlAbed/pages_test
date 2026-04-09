@@ -439,7 +439,7 @@
       const topPos = pos[0] ? pos[0][0].toLowerCase() : 'other factors';
       const topNeg = neg[0] ? neg[0][0].toLowerCase() : 'none';
       document.getElementById('predPrice').textContent = euro(pred);
-      document.getElementById('story').textContent = `The model predicts ${euro(pred)} for this house. The explanation shows that ${topPos} pushes the price up the most, while ${topNeg} pushes it down.`;
+      document.getElementById('story').textContent = `The model predicts ${euro(pred)} for this house with area ${state.area} m². Without XAI: We might assume the model is broken or has learned a nonsensical negative correlation between size and price. With XAI: We see that ${topPos} pushes the price up the most, while ${topNeg} pushes it down.`;
       document.getElementById('takeaway').innerHTML = `<strong>Takeaway:</strong> Accuracy only tells us the model got the right answer. XAI acts as our Quality Control to verify that it got the right answer for the right reasons (aligning with real estate economics).`;
       document.getElementById('areaOut').textContent = `Current area: ${state.area} m²`;
     }
